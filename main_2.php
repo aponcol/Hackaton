@@ -11,6 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <div>This is the main html of the project</div>
+        <div>This is the main html of the project <span style="color: blue;"><?="With a print from PHP";?></span></div>
     </body>
 </html>
