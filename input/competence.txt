@@ -1,4 +1,0 @@
-# id;code;competence
-1;1.1;comp1
-2;2.1;comp2
-3;3.1;comp3

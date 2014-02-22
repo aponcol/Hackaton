@@ -6,7 +6,7 @@
 GET     /competence                 controllers.CompetencyController.index()
 GET     /evaluation                 controllers.EvaluationController.index()
 
-GET     /nurse                      controllers.NurseController.get()
+GET     /nurse/:id                  controllers.NurseController.get(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

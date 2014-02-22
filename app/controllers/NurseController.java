@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public class NurseController extends Controller {
 
-    public static Result get() {
-        return ok(Json.toJson(new Nurse(7, "Josée Boudreaul", WorkUnit.PEDIATRIC, WorkShift.DAY)));
+    public static Result get(long id) {
+        return ok(Json.toJson(new Nurse(id, "Josée Darce", WorkUnit.PEDIATRIC, WorkShift.DAY)));
     }
 }
