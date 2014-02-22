@@ -2,8 +2,8 @@
 
 html        { font: 14px/18px 'HelveticaNeue-Light', 'Helvetica Neue', Arial, Helvetica, sans-serif; color: black; }
 a:hover, a:active { outline: none; }
-#sizer      { width: 340px; margin: 0 auto; padding: 144px 200px 240px; }
-.wrapper        { width: 300px; padding: 18px 20px 0; margin: 40px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; box-shadow: 0 5px 12px rgba(0,0,0,.4); -webkit-box-shadow: 0 5px 12px rgba(0,0,0,.4); -moz-box-shadow: 0 5px 12px rgba(0,0,0,.4); -khtml-box-shadow: 0 5px 12px rgba(0,0,0,.4); }
+/*#sizer      { width: 340px; margin: 0 auto; padding: 144px 200px 240px; }*/
+.wrapper        { width: 800px; padding: 18px 20px 0; margin: 40px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; box-shadow: 0 5px 12px rgba(0,0,0,.4); -webkit-box-shadow: 0 5px 12px rgba(0,0,0,.4); -moz-box-shadow: 0 5px 12px rgba(0,0,0,.4); -khtml-box-shadow: 0 5px 12px rgba(0,0,0,.4); }
 .wrapper > div   { border: 0; padding-bottom: 9px; }
 label       { display: block; cursor: pointer; line-height: 20px; padding-bottom: 9px; text-shadow: 0 -1px 0 rgba(0,0,0,.2); }
 .radios     { padding-top: 18px; }
@@ -16,6 +16,10 @@ label       { display: block; cursor: pointer; line-height: 20px; padding-bottom
 
 .ui-accordion .ui-accordion-icons {
     padding-left: 0;
+}
+
+.element ul {
+    list-style: none;
 }
 
 .has-js .label_check,
