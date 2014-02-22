@@ -3,10 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET     /test                           controllers.Application.test()
+GET     /competence                 controllers.CompetencyController.index()
 
-GET     /nurse                      controllers.NurseApplication.index()
+GET     /nurse                      controllers.NurseController.get()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

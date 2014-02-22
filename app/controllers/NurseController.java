@@ -11,14 +11,9 @@ import views.html.index;
 import play.libs.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * Created by felix on 22/02/14.
- */
-public class NurseApplication extends Controller {
+public class NurseController extends Controller {
 
-    public static Result index() {
-        Nurse n = new Nurse(7, "jane", WorkUnit.PEDIATRIC, WorkShift.DAY);
-
-        return ok(n.toJson());
+    public static Result get() {
+        return ok(Json.toJson(new Nurse(7, "Josée Boudreaul", WorkUnit.PEDIATRIC, WorkShift.DAY)));
     }
 }

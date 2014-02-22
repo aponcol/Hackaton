@@ -13,7 +13,7 @@ public class Database {
     public static void test() throws Exception {
 
         Class.forName("SQLite.JDBCDriver").newInstance();
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:/darce");
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:data/darce.db");
         PreparedStatement st = conn.prepareStatement("CREATE TABLE test (id int);");
         st.execute();
         conn.commit();
@@ -25,7 +25,7 @@ public class Database {
         System.out.println("set");
 
         Class.forName("SQLite.JDBCDriver").newInstance();
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:/darce");
+        Connection conn = DriverManager.getConnection("jdbc:sqlite:data/darce.db");
         PreparedStatement st = conn.prepareStatement("INSERT INTO test (id) VALUES(3);");
         st.executeUpdate();
         conn.commit();
@@ -33,17 +33,16 @@ public class Database {
 
     }
 
-    public static int get() throws Exception {
-        System.out.println("get");
-
-        Class.forName("SQLite.JDBCDriver").newInstance();
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:/darce");
-        PreparedStatement st = conn.prepareStatement("SELECT id FROM test;");
+    public static long get() throws Exception {
+        Class.forName("SQLite.JDBCDriver");
+        Connection c = DriverManager.getConnection("jdbc:sqlite:data/darce.db");
+        c.setAutoCommit(false);
+        PreparedStatement st = c.prepareStatement("SELECT * FROM nurse;");
         ResultSet set = st.executeQuery();
         set.next();
-        int r = set.getInt(1);
-        conn.commit();
-        conn.close();
+        long r = set.getLong("id");
+        c.commit();
+        c.close();
         return r;
 
     }
