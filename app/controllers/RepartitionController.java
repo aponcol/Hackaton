@@ -5,9 +5,6 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-/**
- * Created by felix on 22/02/14.
- */
 public class RepartitionController extends Controller {
 
     public static Result get() {
