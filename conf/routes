@@ -4,6 +4,7 @@
 
 # Home page
 GET     /competence                 controllers.CompetencyController.index()
+GET     /evaluation                 controllers.EvaluationController.index()
 
 GET     /nurse                      controllers.NurseController.get()
 

@@ -7,15 +7,25 @@ import java.util.List;
  */
 public class Element {
     private long id;
+    private String code;
     private String desc;
     private long competenceId;
     private List<Indication> indications;
 
-    public Element(long id, String desc, long competenceId, List<Indication> indications) {
+    public Element(long id, String code, String desc, long competenceId, List<Indication> indications) {
         this.id = id;
+        this.code = code;
         this.desc = desc;
         this.indications = indications;
         this.competenceId = competenceId;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public long getId() {

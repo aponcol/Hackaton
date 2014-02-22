@@ -5,13 +5,23 @@ package models.competency;
  */
 public class Indication {
     private long id;
+    private String code;
     private String desc;
     private long elementId;
 
-    public Indication(long id, String desc, long elementId) {
+    public Indication(long id, String code, String desc, long elementId) {
         this.id = id;
         this.desc = desc;
         this.elementId = elementId;
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public long getElementId() {

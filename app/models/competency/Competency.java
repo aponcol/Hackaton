@@ -8,12 +8,22 @@ import java.util.List;
 public class Competency {
     private long id;
     private String desc;
+    private String code;
 
     private List<Element> elements;
-    public Competency(long id, String desc, List<Element> elements) {
+    public Competency(long id, String code, String desc, List<Element> elements) {
         this.id = id;
+        this.code = code;
         this.desc = desc;
         this.elements = elements;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public long getId() {
