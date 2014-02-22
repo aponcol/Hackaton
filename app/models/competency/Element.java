@@ -8,12 +8,14 @@ import java.util.List;
 public class Element {
     private long id;
     private String desc;
+    private long competenceId;
     private List<Indication> indications;
 
-    public Element(long id, String desc, List<Indication> indications) {
+    public Element(long id, String desc, long competenceId, List<Indication> indications) {
         this.id = id;
         this.desc = desc;
         this.indications = indications;
+        this.competenceId = competenceId;
     }
 
     public long getId() {
@@ -41,5 +43,11 @@ public class Element {
         this.indications = indications;
     }
 
+    public long getCompetenceId() {
+        return competenceId;
+    }
 
+    public void setCompetenceId(long competenceId) {
+        this.competenceId = competenceId;
+    }
 }
