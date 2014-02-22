@@ -16,10 +16,17 @@ function setupLabel() {
         });
     };
 };
+
 $(document).ready(function(){
     $('body').addClass('has-js');
     $('.label_check, .label_radio').click(function(){
         setupLabel();
     });
-    setupLabel(); 
+    setupLabel();
+    
+    $(function() {
+        $("#progressbar").progressbar({
+          value: 37
+        });
+    });
 });
