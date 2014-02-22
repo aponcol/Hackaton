@@ -1,0 +1,58 @@
+
+Felix - Backend - Java
+Lysianne - Java - Backend
+Francois - Xerox
+Sandros - Xerox - specialiste solutions numeriques
+Cathy - Conseillere en soins infirmiers - qualite des soins - projet develope par Directions des soins infirmiers
+Juliana - UX, design graphique
+Gabriel - Interface
+Eve-Marie - Directrice
+Josee Lina - Direction generale
+Philippe - 1 ere anne a concordia
+
+Le public:
+A l'infirmiere qui va completer le formulaire electronique
+- Toutes les directions de l'hopital qui vont consulter les donnees generees
+
+3 ans de travail avec la faculte des sciences infirmieres pour creerer le referentiel de competeneces
+- 1 fois par annes completent le RCI Web
+- Donnees statiques pendant 1 an
+- C'est nouveau - pourrai etre exporte pas seuelement au quebec
+- Page 17 (Portrait Global)
+- 1000 a 1500 formulaires completes par annee
+- Global: debutante, avertie, ress clinique, experte
+- l'infirmmiere se classifie elle meme 1. par competence et 2. globalement
+pour planifier un calendrier de formation, pour les stimuler et suivre leur progres
+
+Phase 2 (optional)
+infirmiere peut voir les formations deja faites et les formations necessaire pour chaque competence qui l'interesse.
+
+hopital, unite, 
+
+- doit etre facile a utiliser. fun.
+
+Contient profile de l'infirmiere (de nuit, de soir, de jour etc)
+
+Temps pour le completer ~3h
+
+Tant que le formulaire n'est pas soumi, on p
+
+Manuel entry or via API
+
+Un grand chemin qui avance, on a des etapes.
+
+Reflexion sur ma pratique professionelle.
+Plan de developement, d'evaluation personelle
+
+Acueil, Competences, Mon Portrait, Glossaire
+
+Infirmiere
+Evaluation
+Competence
+Element (D A, E)
+Indicateur (checkboxes)
+
+Competences:
+Jugement Clinique
+Leadership Clinique
+Continuite des soins
