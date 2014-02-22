@@ -1,6 +1,7 @@
 *.iml
 .settings
 idea
+.idea
 target
 logs
 
