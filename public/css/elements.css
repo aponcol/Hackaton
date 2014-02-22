@@ -18,15 +18,38 @@ label       { display: block; cursor: pointer; line-height: 20px; padding-bottom
     padding-left: 0;
 }
 
+h1, h2 {
+    text-align: center;
+}
+
 .element ul {
     list-style: none;
 }
 
+.ui-widget li label {
+    font-family: 'Lato';
+    font-weight: normal;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #51C219;
+    background: #51C219 50% 50% repeat;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #DC1C71;
+    background: #DC1C71 50% 50% repeat;
+}
+
+.ui-accordion:last-child > div {
+    text-align: center;
+}
+
 .has-js .label_check,
-.has-js .label_radio    { padding-left: 34px; }
-.has-js .label_radio    { background: url(../img/radio-off.png) no-repeat; }
-.has-js .label_check    { background: url(../img/check-off.png) no-repeat; }
-.has-js label.c_on      { background: url(../img/check-on.png) no-repeat; }
-.has-js label.r_on      { background: url(../img/radio-on.png) no-repeat; }
+.has-js .label_radio    { padding-left: 50px; min-height: 40px; }
+.has-js .label_radio    { background: url(../img/boutons_check-15.png) no-repeat; display: inline; padding: 10px 40px 10px 50px; }
+.has-js .label_check    { background: url(../img/boutons_check-01.png) no-repeat; }
+.has-js label.c_on      { background: url(../img/boutons_check-08.png) no-repeat; }
+.has-js label.r_on      { background: url(../img/boutons_check-22.png) no-repeat; }
 .has-js .label_check input,
 .has-js .label_radio input  { position: absolute; left: -9999px; }

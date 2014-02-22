@@ -25,14 +25,17 @@ $(document).ready(function(){
     setupLabel();
     
     $(function() {
-        $("#progressbar").progressbar({
-          value: 37
+        $("#progressbar1").progressbar({
+          value: 50
         });
+        $("#progressbar2").progressbar({
+          value: 60
+        });
+        $("#progressbar3").progressbar({
+          value: 20
+        });
+        
+        $("#accordion > div").accordion({ header: "h3", collapsible: true, active: 6 });
     });
     
-    (function($) {
-        $(function() {
-            $("#accordion > div").accordion({ header: "h3", collapsible: true });
-        })
-    })(jQuery);
 });
