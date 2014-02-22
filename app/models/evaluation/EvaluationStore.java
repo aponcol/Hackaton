@@ -8,9 +8,6 @@ import models.loader.*;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by felix on 22/02/14.
- */
 public class EvaluationStore {
 
     public static List<Evaluation> VALUES = null;
@@ -27,8 +24,6 @@ public class EvaluationStore {
                     }
                 }
             }
-
-            System.out.println(VALUES);
         } catch (IOException e) {
             e.printStackTrace();
         }

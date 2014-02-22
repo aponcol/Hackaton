@@ -2,9 +2,6 @@ package models.competency;
 
 import java.util.List;
 
-/**
- * Created by felix on 22/02/14.
- */
 public class Competency {
     private long id;
     private String desc;
