@@ -1,1 +1,5 @@
-/nbproject/private/
+*.iml
+.settings
+idea
+target
+logs
