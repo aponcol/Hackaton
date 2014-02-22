@@ -35,7 +35,7 @@ $(document).ready(function(){
           value: 20
         });
         
-        $("#accordion > div").accordion({ header: "h3", collapsible: true, active: 6 });
+        $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });
     });
     
 });
