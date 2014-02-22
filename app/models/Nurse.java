@@ -48,13 +48,4 @@ public class Nurse {
     public void setWorkShift(WorkShift workShift) {
         this.workShift = workShift;
     }
-
-    public ObjectNode toJson() {
-        ObjectNode nurse = Json.newObject();
-        nurse.put("id", id);
-        nurse.put("name", name);
-        nurse.put("work-shift", workShift.toString());
-        nurse.put("work-unit", workUnit.toString());
-        return nurse;
-    }
 }
