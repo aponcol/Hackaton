@@ -10,6 +10,14 @@ label       { display: block; cursor: pointer; line-height: 20px; padding-bottom
 .label_check input,
 .label_radio input  { margin-right: 5px; }
 
+.element h3 {
+    text-align: center;
+}
+
+.ui-accordion .ui-accordion-icons {
+    padding-left: 0;
+}
+
 .has-js .label_check,
 .has-js .label_radio    { padding-left: 34px; }
 .has-js .label_radio    { background: url(radio-off.png) no-repeat; }
