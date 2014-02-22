@@ -13,9 +13,6 @@ public class FileObjectLoader {
         while ((line = r.readLine()) != null) {
             if (!line.startsWith("#") && !line.isEmpty()) {
                 String[] values = line.split(";");
-                for(int i = 0;i<values.length;i++) {
-                    System.out.println(values[i]);
-                }
                 objects.add(mapper.createObject(values));
             }
         }

@@ -1,6 +1,8 @@
-package models;
+package models.nurse;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.WorkShift;
+import models.WorkUnit;
 import play.libs.Json;
 
 public class Nurse {
