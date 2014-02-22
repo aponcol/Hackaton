@@ -1,8 +1,7 @@
-import models.Nurse;
+import models.nurse.Nurse;
 import models.repository.Database;
 import models.repository.NurseRepository;
 
-import java.io.Console;
 import java.sql.Connection;
 import java.util.List;
 

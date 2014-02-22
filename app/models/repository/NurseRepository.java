@@ -1,6 +1,6 @@
 package models.repository;
 
-import models.Nurse;
+import models.nurse.Nurse;
 import models.WorkShift;
 import models.WorkUnit;
 
