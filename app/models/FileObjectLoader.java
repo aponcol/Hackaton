@@ -1,0 +1,25 @@
+package models;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileObjectLoader {
+
+    public static <T> List<T> loadFromFile(String filename, ObjectMapper<T> mapper) throws IOException {
+        BufferedReader r = new BufferedReader(new FileReader(filename));
+        String line;
+        List<T> objects = new ArrayList<T>();
+        while ((line = r.readLine()) != null) {
+            if (!line.startsWith("#")) {
+                String[] values = line.split(";");
+                objects.add(mapper.createObject(values));
+            }
+        }
+        return objects;
+    }
+
+    public static interface ObjectMapper<T> {
+        public T createObject(String[] attributes);
+    }
+}

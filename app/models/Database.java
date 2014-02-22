@@ -34,8 +34,6 @@ public class Database {
     }
 
     public static long get() throws Exception {
-        System.out.println("get");
-
         Class.forName("SQLite.JDBCDriver");
         Connection c = DriverManager.getConnection("jdbc:sqlite:data/darce.db");
         c.setAutoCommit(false);
