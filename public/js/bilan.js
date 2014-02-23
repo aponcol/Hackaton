@@ -70,13 +70,13 @@ function pieChart() {
                 });
 
             legend.append("rect")
-                .attr("x", width / 2)
+                .attr("x", width /2.1)
                 .attr("width", 18).attr("height", 18)
                 .style("fill", function(d) {
                     return color(d["type"]);
                 });
 
-            legend.append("text").attr("x", width / 2)
+            legend.append("text").attr("x", width / 2.16)
                 .attr("y", 9).attr("dy", ".35em")
                 .style("text-anchor", "end").text(function(d) {
                     return d["type"];
