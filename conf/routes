@@ -8,8 +8,13 @@ GET     /evaluation                 controllers.EvaluationController.index()
 
 GET     /repartition                controllers.RepartitionController.get()
 
-GET     /nurse                      controllers.NurseController.index
+GET     /nurse                      controllers.NurseController.index()
 GET     /nurse/:id                  controllers.NurseController.get(id: Long)
+
+# UI Helpers
+
+GET     /ui/workshift               controllers.UiController.getWorkShifts()
+GET     /ui/workunit                controllers.UiController.getWorkUnits()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
