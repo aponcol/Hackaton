@@ -1,69 +1,80 @@
 package analysis;
 
+import models.evaluation.Evaluation;
 import models.evaluation.Step;
+import models.nurse.Nurse;
+import models.nurse.NurseStore;
 
 public class Repartition {
-    private int numD;
-    private int numA;
-    private int numRC;
-    private int numE;
+    private StepRepartitionResult D;
+    private StepRepartitionResult A;
+    private StepRepartitionResult RC;
+    private StepRepartitionResult E;
 
     public Repartition() {
+        this(new StepRepartitionResult(), new StepRepartitionResult(), new StepRepartitionResult(), new StepRepartitionResult());
     }
 
-    public Repartition(int numD, int numA, int numRC, int numE) {
-        this.numD = numD;
-        this.numA = numA;
-        this.numRC = numRC;
-        this.numE = numE;
+    public Repartition(StepRepartitionResult D,
+                       StepRepartitionResult A,
+                       StepRepartitionResult RC,
+                       StepRepartitionResult E) {
+        this.D = D;
+        this.A = A;
+        this.RC = RC;
+        this.E = E;
     }
 
-    public int getNumD() {
-        return numD;
+    public StepRepartitionResult getD() {
+        return D;
     }
 
-    public int getNumA() {
-        return numA;
+    public void setD(StepRepartitionResult d) {
+        D = d;
     }
 
-    public int getNumRC() {
-        return numRC;
+    public StepRepartitionResult getA() {
+        return A;
     }
 
-    public int getNumE() {
-        return numE;
+    public void setA(StepRepartitionResult a) {
+        A = a;
     }
 
-    public void setNumD(int numD) {
-        this.numD = numD;
+    public StepRepartitionResult getRC() {
+        return RC;
     }
 
-    public void setNumA(int numA) {
-        this.numA = numA;
+    public void setRC(StepRepartitionResult RC) {
+        this.RC = RC;
     }
 
-    public void setNumRC(int numRC) {
-        this.numRC = numRC;
+    public StepRepartitionResult getE() {
+        return E;
     }
 
-    public void setNumE(int numE) {
-        this.numE = numE;
+    public void setE(StepRepartitionResult e) {
+        E = e;
     }
 
-    public void increment(Step step) {
+    public void addStepToRepartition(Step step,
+                                     Nurse nurse) {
+
         switch (step) {
             case D:
-                numD += 1;
+                this.D.addNurse(nurse);
                 break;
             case A:
-                numA += 1;
+                A.addNurse(nurse);
                 break;
             case RC:
-                numRC += 1;
+                RC.addNurse(nurse);
                 break;
             case E:
-                numE += 1;
+                E.addNurse(nurse);
                 break;
+            default:
+                throw new IllegalArgumentException("Invalid step:" + step);
 
         }
     }
