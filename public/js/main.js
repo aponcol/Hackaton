@@ -17,7 +17,7 @@ function setupLabel() {
     };
 };
 
-$(document).ready(function(){
+$(function(){
     $('body').addClass('has-js');
     $('.label_check, .label_radio').click(function(){
         setupLabel();
@@ -48,6 +48,10 @@ $(document).ready(function(){
         });
         
         $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });
+
+        $.get( "/competence", function(data) {
+            console.log(data);
+        });
     });
     
 });

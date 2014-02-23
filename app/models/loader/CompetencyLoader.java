@@ -13,7 +13,7 @@ public class CompetencyLoader {
     private static FileObjectLoader.ObjectMapper<Competency> loader = new FileObjectLoader.ObjectMapper<Competency>() {
         @Override
         public Competency createObject(String[] attributes) {
-            return new Competency(Long.valueOf(attributes[0]), attributes[1], attributes[2], Lists.<Element>newArrayList());
+            return new Competency(Long.valueOf(attributes[0]), attributes[1], attributes[2], attributes[3], Lists.<Element>newArrayList());
         }
     };
 
