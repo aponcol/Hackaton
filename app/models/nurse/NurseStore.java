@@ -11,9 +11,8 @@ public class NurseStore {
     public static Map<Long, Nurse> MAP = null;
     private static String[] firstNames = {"Josée", "Lysianne", "Annie", "Josée-Lina", "Sylvaine", "Félicia", "Philippa", "Simon", "Naderia"};
     private static String[] lastNames = {"Darce", "Bouchard", "Oliviera", "Ray", "Ace", "Tremblay", "Dufo"};
-    private static WorkShift[] workShifts = {WorkShift.DAY, WorkShift.EVENING, WorkShift.NIGHT};
-    private static WorkUnit[] workUnits = { WorkUnit.EMERGENCY, WorkUnit.INTENSIVE_CARE, WorkUnit.HEMATO_ONCO,WorkUnit.OBSTETRIC,
-            WorkUnit.UNIT_MOTHER_CHILD, WorkUnit.NEO_NATALOGY, WorkUnit.SURGERY, WorkUnit.OP_BLOCK, WorkUnit.INFECTIONS_DISEASE};
+    private static WorkShift[] workShifts = WorkShift.values();
+    private static WorkUnit[] workUnits = WorkUnit.values();
 
     static {
         BoundValueProvider<String> firstNameProvider = new BoundValueProvider<>(firstNames);
