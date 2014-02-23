@@ -1,8 +1,7 @@
 package models;
 
-/**
- * Created by felix on 22/02/14.
- */
+
 public enum WorkUnit {
-    PEDIATRIC
+    EMERGENCY, INTENSIVE_CARE, HEMATO_ONCO, OBSTETRIC, UNIT_MOTHER_CHILD, NEO_NATALOGY,
+    SURGERY, OP_BLOCK, INFECTIONS_DISEASE
 }

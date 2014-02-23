@@ -38,7 +38,7 @@ public class NurseRepository {
                 long workShift = set.getLong("workshift_id");
                 long workUnit = set.getLong("workunit_id");
 
-                nurses.add( new Nurse(r, name, WorkUnit.PEDIATRIC, WorkShift.DAY));
+                nurses.add( new Nurse(r, name, WorkUnit.NEO_NATALOGY, WorkShift.DAY));
             }
 
         }
