@@ -1,5 +1,10 @@
+import models.evaluation.Evaluation;
+import models.evaluation.EvaluationStore;
 import models.nurse.Nurse;
+import models.nurse.NurseStore;
 import models.repository.Database;
+import models.repository.EvaluatedElementRepository;
+import models.repository.EvaluationRepository;
 import models.repository.NurseRepository;
 
 import java.sql.Connection;
@@ -20,8 +25,11 @@ public class Main {
 
             Connection conn = Database.getConnection("jdbc:sqlite:darce.db");
             NurseRepository nurseRepository = new NurseRepository(conn);
+            EvaluationRepository evaluationRepo = new EvaluationRepository(conn);
+            EvaluatedElementRepository evaluatedElementRepo = new EvaluatedElementRepository(conn);
 
-            nurses = nurseRepository.getNurses();
+            //fillNurseTable(nurseRepository);
+            //fillEvaluationTable(evaluationRepo, evaluatedElementRepo);
 
         }
         catch(Exception e)
@@ -30,7 +38,19 @@ public class Main {
         }
     }
 
+    public static void fillNurseTable(NurseRepository repo)
+    {
+        for( Nurse nurse : NurseStore.MAP.values())
+        {
+            repo.add(nurse);
+        }
+    }
 
-
-
+    public static void fillEvaluationTable(EvaluationRepository repo, EvaluatedElementRepository repoElements)
+    {
+        for ( Evaluation eval : EvaluationStore.VALUES)
+        {
+            repo.add(eval, repoElements);
+        }
+    }
 }
