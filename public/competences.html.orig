@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RCI - Référentiel des Compétences Infirmière">
+    <meta name="author" content="Hacking Health Montreal 2014 - Group #6">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>RCI</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href='css/jquery-ui.css' rel='stylesheet'>
+    <link href='css/fonts.css' rel='stylesheet'>
+    <link href='css/carousel.css' rel='stylesheet'>
+    <link href='css/elements.css' rel='stylesheet'>
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navigation">
+
+<!-- Fixed navbar -->
+<div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><b>RCI</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" class="smothscroll">Accueil</a></li>
+                <li class="active"><a href="#" class="smothscroll">Compétences</a></li>
+                <li><a href="#showcase" class="smothScroll">Bilan</a></li>
+                <li><a href="#contact" class="smothScroll">Journal De Bord</a></li>
+                <li><a href="#contact" class="smothScroll">Informations</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<<<<<<< HEAD
+<div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ul class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active">
+                <a href="#">
+                    <div id="progressbar1"></div>
+                </a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="1">
+                <a href="#">
+                    <div id="progressbar2"></div>
+                </a>
+            </li>
+            <li data-target="#myCarousel" data-slide-to="2">
+                <a href="#">
+                    <div id="progressbar3"></div>
+                </a>
+            </li>
+        </ul>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <h1>COMPETENCE 1:<br/>Évaluer la competences des autres enfermières</h1>
+                <br/><br/>
+                <h2>Element qui est exercer une bonne disposition pour les traitements de patients</h2>
+                <div id="accordion">
+                    <div class="element">
+                        <h3>Étape 1<br/>Infirmière Débutante</h3>
+                        <div>
+                            <ul>
+                                <li>
+                                    <label class="label_check" for="checkbox-01"><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked />
+                                        Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                        ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                        amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                        odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-02"><input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox" />
+                                        Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                        amet, nunc. Nam a nibh. Donec suscipit eros.
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-03"><input name="sample-checkbox-03" id="checkbox-03" value="1" type="checkbox" />
+                                        Molestie vel, gravida in, condimentum sit. Nam mi. Proin viverra leo ut
+                                        odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-04"><input name="sample-checkbox-04" id="checkbox-04" value="1" type="checkbox" />
+                                        Vestibulum a velit eu ante scelerisque vulputate.
+                                    </label>
+                                </li>
+
+                            </ul>
+=======
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="nav-sidebar col-md-2">
+            <ul class="nav">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="javascript:;">Home</a></li>
+                <li data-target="#myCarousel" data-slide-to="1"><a href="javascript:;">About</a></li>
+                <li data-target="#myCarousel" data-slide-to="2"><a href="javascript:;">Products</a></li>
+                <li data-target="#myCarousel" data-slide-to="3"><a href="javascript:;">FAQ</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>
+            </ul>
+        </div>
+
+        <!-- Carousel -->
+        <div id="myCarousel" class="carousel slide col-md-10" data-ride="carousel">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <!-- Accordion -->
+                    <div id="accordion">
+                        <div class="element">
+                            <h3>Étape 1<br/>Infirmière Débutante</h3>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label class="label_check" for="checkbox-01"><input name="sample-checkbox-01"
+                                                                                            id="checkbox-01" value="1"
+                                                                                            type="checkbox" checked/>
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-02"><input name="sample-checkbox-02"
+                                                                                            id="checkbox-02" value="1"
+                                                                                            type="checkbox"/>
+                                            Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-03"><input name="sample-checkbox-03"
+                                                                                            id="checkbox-03" value="1"
+                                                                                            type="checkbox"/>
+                                            Molestie vel, gravida in, condimentum sit. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-04"><input name="sample-checkbox-04"
+                                                                                            id="checkbox-04" value="1"
+                                                                                            type="checkbox"/>
+                                            Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                </ul>
+                            </div>
+>>>>>>> 49584070376194af6d0550075b95196fb332fd92
+                        </div>
+                        <div class="element">
+                            <h3>Étape 2</br>Infirmière avertie</h3>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label class="label_check" for="checkbox-11"><input name="sample-checkbox-11"
+                                                                                            id="checkbox-11" value="1"
+                                                                                            type="checkbox" checked/>
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-12"><input name="sample-checkbox-12"
+                                                                                            id="checkbox-12" value="1"
+                                                                                            type="checkbox"/>
+                                            Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-13"><input name="sample-checkbox-13"
+                                                                                            id="checkbox-13" value="1"
+                                                                                            type="checkbox"/>
+                                            Molestie vel, gravida in, condimentum sit. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-14"><input name="sample-checkbox-14"
+                                                                                            id="checkbox-14" value="1"
+                                                                                            type="checkbox"/>
+                                            Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <h3>Étape 3<br/>Infirmière Personne-Ressource</h3>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label class="label_check" for="checkbox-21"><input name="sample-checkbox-21"
+                                                                                            id="checkbox-21" value="1"
+                                                                                            type="checkbox" checked/>
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-22"><input name="sample-checkbox-22"
+                                                                                            id="checkbox-22" value="1"
+                                                                                            type="checkbox"/>
+                                            Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-23"><input name="sample-checkbox-23"
+                                                                                            id="checkbox-23" value="1"
+                                                                                            type="checkbox"/>
+                                            Molestie vel, gravida in, condimentum sit. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label_check" for="checkbox-24"><input name="sample-checkbox-24"
+                                                                                            id="checkbox-24" value="1"
+                                                                                            type="checkbox"/>
+                                            Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <h3>Étape 4<br/>Infirmière Experte Clinique</h3>
+
+                            <div>
+                                <ul>
+                                    <li>
+                                        <label class="label_check" for="checkbox-31"><input name="sample-checkbox-31"
+                                                                                            id="checkbox-31" value="1"
+                                                                                            type="checkbox" checked/>
+                                            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                                            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-32"><input name="sample-checkbox-32"
+                                                                                            id="checkbox-32" value="1"
+                                                                                            type="checkbox"/>
+                                            Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                                            amet, nunc. Nam a nibh. Donec suscipit eros.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-33"><input name="sample-checkbox-33"
+                                                                                            id="checkbox-33" value="1"
+                                                                                            type="checkbox"/>
+                                            Molestie vel, gravida in, condimentum sit. Nam mi. Proin viverra leo ut
+                                            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label class="label_check" for="checkbox-34"><input name="sample-checkbox-34"
+                                                                                            id="checkbox-34" value="1"
+                                                                                            type="checkbox"/>
+                                            Vestibulum a velit eu ante scelerisque vulputate.
+                                        </label>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <h3>Autoévaluation / <br/>Commentaires / Exemples</h3>
+                        <div>
+                            <label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked />Débutante 1</label>
+                            <label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" />Avertie 2</label>
+                            <label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" />Personne-ressource 3</label>
+                            <label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" />Experte clinique 4</label>
+<!--                            <ul>
+                                <li>
+                                    <label class="label_check" for="checkbox-31"><input name="sample-checkbox-31" id="checkbox-31" value="1" type="checkbox" checked />
+                                        Débutante 1
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-32"><input name="sample-checkbox-32" id="checkbox-32" value="1" type="checkbox"  />
+                                        Avertie 2
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-33"><input name="sample-checkbox-33" id="checkbox-33" value="1" type="checkbox"  />
+                                        Personne-ressource 3
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="label_check" for="checkbox-34"><input name="sample-checkbox-34" id="checkbox-34" value="1" type="checkbox"  />
+                                        Experte clinique 4
+                                    </label>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Item -->
+                <div class="item">
+
+                </div>
+                <!-- End Item -->
+                <div class="item">
+                    <img src="http://placehold.it/1200x400/2980b9/ffffff&text=Portfolio">
+
+                    <div class="carousel-caption">
+                        <h3>
+                            Headline</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
+                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    </div>
+                </div>
+                <!-- End Item -->
+                <div class="item">
+                    <img src="http://placehold.it/1200x400/8e44ad/ffffff&text=Services">
+
+                    <div class="carousel-caption">
+                        <h3>
+                            Headline</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
+                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                    </div>
+                </div>
+                <!-- End Item -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
