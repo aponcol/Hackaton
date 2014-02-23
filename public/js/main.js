@@ -21,7 +21,6 @@ function setupLabel() {
 
 $(function(){
 
-    $(function() {
         $.get( "/competence", function(data) {
 
             _.each(data, function(competence) {
@@ -34,8 +33,6 @@ $(function(){
                     element.experte = levels[3];
                 });
             });
-
-            console.log(data);
 
             var source   = $("#competences-template").html();
             var template = Handlebars.compile(source);
@@ -143,7 +140,6 @@ $(function(){
             $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });
 
         });
-    });
 });
 
 Handlebars.registerHelper('setIndex', function(value){
