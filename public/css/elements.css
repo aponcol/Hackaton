@@ -1,6 +1,7 @@
 * { margin: 0; padding: 0; }
 
 html        { font: 14px/18px 'HelveticaNeue-Light', 'Helvetica Neue', Arial, Helvetica, sans-serif; color: black; }
+body        { overflow-y: scroll; }
 a:hover, a:active { outline: none; }
 /*#sizer      { width: 340px; margin: 0 auto; padding: 144px 200px 240px; }*/
 .wrapper        { width: 800px; padding: 18px 20px 0; margin: 40px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; box-shadow: 0 5px 12px rgba(0,0,0,.4); -webkit-box-shadow: 0 5px 12px rgba(0,0,0,.4); -moz-box-shadow: 0 5px 12px rgba(0,0,0,.4); -khtml-box-shadow: 0 5px 12px rgba(0,0,0,.4); }
@@ -26,7 +27,7 @@ h1, h2 {
     list-style: none;
 }
 
-.ui-widget li label {
+.ui-widget label {
     font-family: 'Lato';
     font-weight: normal;
 }
@@ -47,7 +48,7 @@ h1, h2 {
 
 .has-js .label_check,
 .has-js .label_radio    { padding-left: 50px; min-height: 40px; }
-.has-js .label_radio    { background: url(../img/boutons_check-15.png) no-repeat; display: inline; padding: 10px 40px 10px 50px; }
+.has-js .label_radio    { background: url(../img/boutons_check-15.png) no-repeat; display: inline; padding: 10px 20px 10px 50px; }
 .has-js .label_check    { background: url(../img/boutons_check-01.png) no-repeat; }
 .has-js label.c_on      { background: url(../img/boutons_check-08.png) no-repeat; }
 .has-js label.r_on      { background: url(../img/boutons_check-22.png) no-repeat; }
@@ -71,13 +72,13 @@ h1, h2 {
 }
 
 .competence-1 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid #51C219;
-    background: #51C219 50% 50% repeat;
+    border: 1px solid #2E6BB5;
+    background: #2E6BB5 50% 50% repeat;
 }
 
 .competence-1 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-    border: 1px solid #DC1C71;
-    background: #DC1C71 50% 50% repeat;
+    border: 1px solid #EB8E22;
+    background: #EB8E22 50% 50% repeat;
 }
 
 .has-js .competence-1 .label_radio {
@@ -94,4 +95,72 @@ h1, h2 {
 
 .has-js .competence-1 label.r_on {
     background: url(../img/boutons_check-25.png) no-repeat;
+}
+
+.btn-progress {
+    background: url(../img/Competence_cotes-01.png) no-repeat;
+}
+
+.evt-0 .btn-progress {
+    background: url(../img/Competence_cotes-01.png) no-repeat;
+}
+
+.evt-1 .btn-progress {
+    background: url(../img/Competence_cotes-04.png) no-repeat;
+}
+
+.evt-2 .btn-progress {
+    background: url(../img/Competence_cotes-07.png) no-repeat;
+}
+
+.btn-progress-wrapper {
+    display: inline-block;
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+}
+
+.btn-progress-wrapper .btn-progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 40px;
+}
+
+.btn-progress-wrapper .progress-bar {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    top: 5px;
+    right: 9px;
+}
+
+.btn-progress-wrapper .ui-widget-header {
+    border: none;
+}
+
+.evt-0 .btn-progress-wrapper .ui-widget-header {
+    background: #DC1C71 50% 50% repeat-x;
+}
+
+.evt-1 .btn-progress-wrapper .ui-widget-header {
+    background: #EB8E22 50% 50% repeat-x;
+}
+
+.evt-2 .btn-progress-wrapper .ui-widget-header {
+    background: #E3DB6C 50% 50% repeat-x;
+}
+
+.evt-0 .btn-progress-wrapper .progress-bar {
+    background-color: #51C219;
+}
+
+.evt-1 .btn-progress-wrapper .progress-bar {
+    background-color: #2E6BB5;
+}
+
+.evt-2 .btn-progress-wrapper .progress-bar {
+    background-color: #A03071;
 }

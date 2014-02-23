@@ -25,14 +25,26 @@ $(document).ready(function(){
     setupLabel();
     
     $(function() {
-        $("#progressbar1").progressbar({
-          value: 50
+//        $("#progressbar1").progressbar({
+//          value: 50
+//        });
+//        $("#progressbar2").progressbar({
+//          value: 60
+//        });
+//        $("#progressbar3").progressbar({
+//          value: 20
+//        });
+
+        $(".evt-0 .btn-progress-wrapper .progress-bar").progressbar({
+            value: 50
         });
-        $("#progressbar2").progressbar({
-          value: 60
+        
+        $(".evt-1 .btn-progress-wrapper .progress-bar").progressbar({
+            value: 60
         });
-        $("#progressbar3").progressbar({
-          value: 20
+        
+        $(".evt-2 .btn-progress-wrapper .progress-bar").progressbar({
+            value: 20
         });
         
         $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });
