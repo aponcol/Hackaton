@@ -55,21 +55,21 @@ $(function(){
             setupLabel();
             
             $("#main-progress-bar").progressbar({
-          value: 50
-        });
+                value: 0
+              });
 
 
 
             $(".evt-0 .btn-progress-wrapper .progress-bar").progressbar({
-                value: 50
+                value: 0
             });
 
             $(".evt-1 .btn-progress-wrapper .progress-bar").progressbar({
-                value: 60
+                value: 0
             });
 
             $(".evt-2 .btn-progress-wrapper .progress-bar").progressbar({
-                value: 20
+                value: 0
             });
 
             $.fn.carousel.defaults = {
@@ -109,6 +109,20 @@ $(function(){
                 setTimeout(function(){
                     $(".accordion-wrapper > div").accordion("refresh");
                 },500);
+                var classId = $(this).attr("id");
+                var newClassNumber = parseInt(classId.replace("myInnerCarousel-","")) - 1;
+                var progressBarValue = $(".evt-"+newClassNumber+" .btn-progress-wrapper .progress-bar").progressbar("value");
+                var newValue = parseInt(progressBarValue) + 30;
+                if (newValue > 100) { newValue = 100; }
+                $(".evt-"+newClassNumber+" .btn-progress-wrapper .progress-bar").progressbar({
+                    value: newValue
+                });
+                
+                var mainBarValue = $("#main-progress-bar").progressbar("value");
+                var mainBarNewValue = parseInt(mainBarValue) + 5;
+                $("#main-progress-bar").progressbar({
+                    value: mainBarNewValue
+                  });
             });
 
             $('.nav').on('click', 'li a', function() {

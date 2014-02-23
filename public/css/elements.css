@@ -151,6 +151,7 @@ h1, h2 {
 .competence-label {
     display: inline-block;
     width: 50%;
+    white-space: initial;
 }
 
 .btn-progress-wrapper .btn-progress {
@@ -270,4 +271,7 @@ h1, h2 {
 }
 .main-progress.ui-widget-content {
     border: none;
+}
+.nav-sidebar > ul > li > a {
+    white-space: nowrap;
 }
