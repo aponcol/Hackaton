@@ -47,8 +47,8 @@ h1, h2 {
 }
 
 .has-js .label_check,
-.has-js .label_radio    { padding-left: 50px; min-height: 40px; }
-.has-js .label_radio    { background: url(../img/boutons_check-15.png) no-repeat; display: inline; padding: 10px 20px 10px 50px; }
+.has-js .label_radio    { padding-left: 50px; min-height: 40px; white-space:nowrap; line-height: 45px; }
+.has-js .label_radio    { background: url(../img/boutons_check-15.png) no-repeat; display: inline; padding: 10px 10px 10px 50px; }
 .has-js .label_check    { background: url(../img/boutons_check-01.png) no-repeat; }
 .has-js label.c_on      { background: url(../img/boutons_check-08.png) no-repeat; }
 .has-js label.r_on      { background: url(../img/boutons_check-22.png) no-repeat; }
@@ -274,4 +274,40 @@ h1, h2 {
 }
 .nav-sidebar > ul > li > a {
     white-space: nowrap;
+}
+
+.icon-dev {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+.icon-dev.debutante {
+    background: url(../img/boutons_check-21.png) no-repeat;
+}
+
+.icon-dev.avertie {
+    background: url(../img/boutons_check-21.png) no-repeat;
+}
+
+.icon-dev.pr {
+    background: url(../img/boutons_check-21.png) no-repeat;
+}
+
+.icon-dev.experte {
+    background: url(../img/boutons_check-21.png) no-repeat;
+}
+
+.dev-wrapper > div {
+    text-align: center;
+}
+
+.dev-wrapper span {
+    display: block;
+    float: left;
+    line-height: 40px;
+}
+
+.dev-wrapper > div > div {
+    float: left;
 }

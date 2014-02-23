@@ -102,7 +102,9 @@ $(function(){
 
             $('.myInnerCarousel').carousel({
                 interval: false,
-                pause: 'hover'
+                pause: 'hover',
+                wrap: false
+                
             });
             
             $('.myInnerCarousel').on('slid.bs.carousel', function () {
