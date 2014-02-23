@@ -13,59 +13,46 @@ function pieChart() {
 
        repartitions = transformData(repartitions[0]);
 
-        var WIDTH = 600, HEIGHT = 450;
 
-        var SEGMENT = "type";
-        var DATA = "num";
+            var width = 800,
+                height = 250,
+                radius = Math.min(width, height) / 2;
 
-        var width = WIDTH,
-            height = HEIGHT,
-            radius = Math.min(width, height) / 3;
+            var color = d3.scale.ordinal()
+                .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-        var color = d3.scale.ordinal()
-            .range(["#98abc5", "#6b486b", "#ff8c00", "#a05d56"]);
+            var arc = d3.svg.arc()
+                .outerRadius(radius - 10)
+                .innerRadius(0);
 
-        arc = d3.svg.arc()
-            .outerRadius(radius - 10)
-            .innerRadius(0);
+            var pie = d3.layout.pie()
+                .sort(null)
+                .value(function (d) {
+                    return d.num;
+                });
 
-        var pie = d3.layout.pie()
-            .sort(null)
-            .value(function(d) { return d[DATA]; });
 
-        svg = d3.select("#canvas").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate(" + width / 3 + "," + height / 2 + ")");
+            var svg = d3.select("#canvas").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("id", "pieChart")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        var drawD3Document = function(data) {
-            data.forEach(function(d) {
-                d[DATA] = +d[DATA];
-            });
-            var g = svg.selectAll(".arc")
-                .data(pie(data))
-                .enter().append("g")
-                .attr("class", "arc");
+            var path = svg.selectAll("path")
+                .data(pie(repartitions))
+                .enter()
+                .append("path");
 
-            var count = 0;
-
-            g.append("path")
+            path.transition()
+                .duration(500)
+                .attr("fill", function(d, i) { return color(d.data.type); })
                 .attr("d", arc)
-                .attr("id", function(d) { return "arc-" + (count++); })
-                .style("fill", function(d) {
-                    return color(d.data[SEGMENT]);
-                });
-            g.append("text").attr("transform", function(d) {
-                return "translate(" + arc.centroid(d) + ")";
-            }).attr("dy", ".35em").style("text-anchor", "middle")
-                .text(function(d) {
-                    return d.data[SEGMENT];
-                });
+                .each(function(d) { this._current = d; }); // store the initial angles
 
             count = 0;
             var legend = svg.selectAll(".legend")
-                .data(data).enter()
+                .data(repartitions).enter()
                 .append("g").attr("class", "legend")
                 .attr("legend-id", function(d) {
                     return count++;
@@ -86,41 +73,35 @@ function pieChart() {
                 .attr("x", width / 2)
                 .attr("width", 18).attr("height", 18)
                 .style("fill", function(d) {
-                    return color(d[SEGMENT]);
+                    return color(d["type"]);
                 });
+
             legend.append("text").attr("x", width / 2)
                 .attr("y", 9).attr("dy", ".35em")
                 .style("text-anchor", "end").text(function(d) {
-                    return d[SEGMENT];
+                    return d["type"];
                 });
 
             $("#competenceFilter").change(function(d) {
-            var selected = $('#competenceFilter').find(":selected");
+                var selected = $('#competenceFilter').find(":selected");
                 var competencyId = selected.val();
                 $.get("/repartition/competency/" + competencyId, function(repartitions) {
                     repartitions = transformData(repartitions);
-                    g.data(pie(repartitions));
-                    g.transition().duration(750).attrTween("d", arcTween); // redraw the arcs
-
+                    path.data(pie(repartitions));
+                    path.transition().duration(750).attrTween("d", arcTween); // redraw the arcs
                 });
             });
 
-
+// Store the displayed angles in _current.
+// Then, interpolate from _current to the new angles.
+// During the transition, _current is updated in-place by d3.interpolate.
             function arcTween(a) {
                 var i = d3.interpolate(this._current, a);
                 this._current = i(0);
                 return function(t) {
                     return arc(i(t));
                 };
-
-
-
             }
-
-
-        }
-
-        drawD3Document(repartitions);
     });
 
     function transformData(repartitions) {
@@ -137,7 +118,7 @@ function pieChart() {
             if (name == "e") {
                 return {"type": "Experte", "num": val.count}
             }
-        })
+        });
 
         return repartitions;
     }
