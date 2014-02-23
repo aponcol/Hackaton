@@ -141,8 +141,18 @@ $(function(){
             $(".nav-sidebar .nav > :first-child").addClass("active");
 
             $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });
+            
+            
 
         });
+    });
+});
+
+$(document).ready(function(){
+    $(".open-box").click(function(){
+        $('.strategies').show('fadeIn');
+        $('.strategies').show();
+        return false;
     });
 });
 
