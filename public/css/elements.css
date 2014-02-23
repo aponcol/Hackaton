@@ -121,6 +121,11 @@ h1, h2 {
     height: 40px;
 }
 
+.competence-label {
+    display: inline-block;
+    width: 50%;
+}
+
 .btn-progress-wrapper .btn-progress {
     position: absolute;
     top: 0;
