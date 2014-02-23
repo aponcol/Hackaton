@@ -10,6 +10,6 @@ import java.io.IOException;
 public class CompetencyController extends Controller {
 
     public static Result index() throws IOException {
-        return ok(Json.toJson(CompetencyStore.COMPETENCES));
+        return ok(Json.toJson(CompetencyStore.COMPETENCIES));
     }
 }

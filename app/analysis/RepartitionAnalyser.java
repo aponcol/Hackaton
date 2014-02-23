@@ -4,7 +4,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import models.WorkShift;
 import models.WorkUnit;
+import models.competency.Competency;
 import models.competency.CompetencyStore;
+import models.evaluation.EvaluatedCompetency;
 import models.evaluation.EvaluatedElement;
 import models.evaluation.Evaluation;
 import models.evaluation.Step;
@@ -37,7 +39,7 @@ public class RepartitionAnalyser {
         return filtered;
     }
 
-    public static Repartition repartition(List<Evaluation> evaluations) {
+    public static Repartition<Nurse> repartition(List<Evaluation> evaluations) {
         Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
@@ -49,7 +51,7 @@ public class RepartitionAnalyser {
     }
 
 
-    public static Repartition repartitionByElementId(List<Evaluation> evaluations, Long elementId) {
+    public static Repartition<Nurse> repartitionByElementId(List<Evaluation> evaluations, Long elementId) {
         Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
@@ -60,7 +62,7 @@ public class RepartitionAnalyser {
         return result;
     }
 
-    public static Repartition repartitionByCompetenceId(List<Evaluation> evaluations, Long competenceId) {
+    public static Repartition<Nurse> repartitionByCompetenceId(List<Evaluation> evaluations, Long competenceId) {
         Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
@@ -72,7 +74,21 @@ public class RepartitionAnalyser {
         return result;
     }
 
-    public static List<EvaluatedElement> filterEvaluatedElementsByElementId(List<EvaluatedElement> evaluatedElements,
+    public static Repartition<EvaluatedCompetency> evaluateCompetencyRepartition(Evaluation e) {
+        Repartition<EvaluatedCompetency> result = new Repartition<>();
+
+        for(Competency c: CompetencyStore.COMPETENCIES) {
+            List<EvaluatedElement> elements = filterEvaluatedElementsByElementId(e.getEvaluatedElements(),
+                    CompetencyStore.COMPETENCE_ID_TO_ELEMENT_ID_MAP.get(c.getId()));
+            Step s = computeEvaluationOverallStep(elements);
+            result.addElementToRepartition(s, new EvaluatedCompetency(e.getId(), c.getId(), s, elements));
+        }
+
+        return result;
+
+    }
+
+    private static List<EvaluatedElement> filterEvaluatedElementsByElementId(List<EvaluatedElement> evaluatedElements,
                                                                             Set<Long> elementIds) {
         List<EvaluatedElement> filtered = Lists.newArrayList();
         for (EvaluatedElement e : evaluatedElements) {
@@ -83,7 +99,7 @@ public class RepartitionAnalyser {
         return filtered;
     }
 
-    public static Step computeEvaluationOverallStep(List<EvaluatedElement> evaluatedElements) {
+    private static Step computeEvaluationOverallStep(List<EvaluatedElement> evaluatedElements) {
         int sum = 0;
         for (EvaluatedElement ee : evaluatedElements) {
             sum += ee.getEvaluation().getValue();

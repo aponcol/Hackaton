@@ -1,5 +1,6 @@
 package controllers;
 
+import analysis.RepartitionAnalyser;
 import models.evaluation.Evaluation;
 import models.evaluation.EvaluationStore;
 import models.nurse.Nurse;
@@ -28,6 +29,6 @@ public class NurseController extends Controller {
 
     public static Result getEvaluationRepartition(long id, long eId) {
         Evaluation e = EvaluationStore.NURSE_ID_TO_EVALUATION.get(id);
-        return ok(Json.toJson(e)); //todo
+        return ok(Json.toJson(RepartitionAnalyser.evaluateCompetencyRepartition(e)));
     }
 }

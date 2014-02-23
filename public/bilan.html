@@ -24,7 +24,37 @@
     <script src="js/handlebars-math-helper.js"></script>
     <script src="js/underscore-min.js"></script>
     <script src="js/smoothscroll.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/bilan.js"></script>
+
+    <script id="bilan-template" type="text/x-handlebars-template">
+        <form id="searchFilters">
+            <!-- TO DO: AJAX Call to get competence list & return according ID.
+                     Also check for the arrows  -->
+            <select id="competenceFilter">
+                <option value="allCompetences">Toutes les compétences</option>
+                {{#each competences}}
+                    <option value="{{id}}">{{shortDesc}}</option>
+                {{/each}}
+            </select>
+
+            <select id="unityFilter">
+                <option value="bogus">Toutes les unités</option>
+                {{#each unites}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <select id="workShiftFilter">
+                <option value="bogus">Tous les quarts de travail</option>
+                <option value="DAY">Jour</option>
+                <option value="EVENING">Soir</option>
+                <option value="NIGHT">Nuit</option>
+            </select>
+            <button id="btnSubmit" type="button" value="soumettre">Soumettre</button>
+        </form>
+        <div id="canvas"></div>
+    </script>
+
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
@@ -52,25 +82,8 @@
     </div>
 </div>
 
-<form id="searchFilters">
-    <!-- TO DO: AJAX Call to get competence list & return according ID.
-             Also check for the arrows  -->
-            <select id="competenceFilter">
-                    <option value="allCompetences">Toutes les compétences</option>
-                    <option value="bogus">Bogus</option>
-            </select>
+<div id="bilan-placeholder">
 
-            <select id="unityFilter">
-                    <option value="bogus">Toutes les unités</option>
-                    <option value="bogus">Urgence</option>
-                    <option value="bogus">Bogus</option>
-            </select>
-            <select id="workShiftFilter">
-                    <option value="bogus">Tous les quarts de travail</option>
-                    <option value="bogus">Bogus</option>
-            </select>
-            <button id="btnSubmit" type="button" value="soumettre">Soumettre</button>
-    </form>
-
+</div>
 </body>
 </html>
