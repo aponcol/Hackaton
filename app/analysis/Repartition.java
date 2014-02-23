@@ -2,68 +2,76 @@ package analysis;
 
 import models.evaluation.Step;
 
-public class Repartition {
-    private int numD;
-    private int numA;
-    private int numRC;
-    private int numE;
+public class Repartition<T> {
+    private StepRepartitionResult<T> D;
+    private StepRepartitionResult<T> A;
+    private StepRepartitionResult<T> RC;
+    private StepRepartitionResult<T> E;
 
     public Repartition() {
+        this(new StepRepartitionResult<T>(), new StepRepartitionResult<T>(), new StepRepartitionResult<T>(), new StepRepartitionResult<T>());
     }
 
-    public Repartition(int numD, int numA, int numRC, int numE) {
-        this.numD = numD;
-        this.numA = numA;
-        this.numRC = numRC;
-        this.numE = numE;
+    public Repartition(StepRepartitionResult<T> D,
+                       StepRepartitionResult<T> A,
+                       StepRepartitionResult<T> RC,
+                       StepRepartitionResult<T> E) {
+        this.D = D;
+        this.A = A;
+        this.RC = RC;
+        this.E = E;
     }
 
-    public int getNumD() {
-        return numD;
+    public StepRepartitionResult getD() {
+        return D;
     }
 
-    public int getNumA() {
-        return numA;
+    public void setD(StepRepartitionResult d) {
+        D = d;
     }
 
-    public int getNumRC() {
-        return numRC;
+    public StepRepartitionResult getA() {
+        return A;
     }
 
-    public int getNumE() {
-        return numE;
+    public void setA(StepRepartitionResult a) {
+        A = a;
     }
 
-    public void setNumD(int numD) {
-        this.numD = numD;
+    public StepRepartitionResult getRC() {
+        return RC;
     }
 
-    public void setNumA(int numA) {
-        this.numA = numA;
+    public void setRC(StepRepartitionResult RC) {
+        this.RC = RC;
     }
 
-    public void setNumRC(int numRC) {
-        this.numRC = numRC;
+    public StepRepartitionResult getE() {
+        return E;
     }
 
-    public void setNumE(int numE) {
-        this.numE = numE;
+    public void setE(StepRepartitionResult e) {
+        E = e;
     }
 
-    public void increment(Step step) {
+    public void addElementToRepartition(Step step,
+                                        T element) {
+
         switch (step) {
             case D:
-                numD += 1;
+                this.D.addElement(element);
                 break;
             case A:
-                numA += 1;
+                A.addElement(element);
                 break;
             case RC:
-                numRC += 1;
+                RC.addElement(element);
                 break;
             case E:
-                numE += 1;
+                E.addElement(element);
                 break;
+            default:
+                throw new IllegalArgumentException("Invalid step:" + step);
 
         }
     }

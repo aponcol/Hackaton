@@ -1,21 +1,21 @@
 package models.evaluation;
 
-import models.competency.Competency;
-import models.competency.Element;
-import models.competency.Indication;
+import com.google.common.collect.Maps;
 import models.loader.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class EvaluationStore {
 
     public static List<Evaluation> VALUES = null;
+    public static Map<Long, Evaluation> NURSE_ID_TO_EVALUATION = Maps.newHashMap();
 
     static {
         try {
             VALUES = EvaluationLoader.loadEvaluations();
-            List<EvaluatedElement> evaluatedElements = EvaluatedElementsLoader.loadEvaluations();
+            List<EvaluatedElement> evaluatedElements = EvaluatedElementsLoader.loadEvaluatedElements();
 
             for (Evaluation e : VALUES) {
                 for (EvaluatedElement ee : evaluatedElements) {
@@ -23,6 +23,7 @@ public class EvaluationStore {
                         e.getEvaluatedElements().add(ee);
                     }
                 }
+                NURSE_ID_TO_EVALUATION.put(e.getNurseId(), e);
             }
         } catch (IOException e) {
             e.printStackTrace();

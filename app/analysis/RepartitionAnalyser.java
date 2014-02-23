@@ -8,6 +8,7 @@ import models.competency.CompetencyStore;
 import models.evaluation.EvaluatedElement;
 import models.evaluation.Evaluation;
 import models.evaluation.Step;
+import models.nurse.Nurse;
 import models.nurse.NurseStore;
 
 import java.util.List;
@@ -37,30 +38,38 @@ public class RepartitionAnalyser {
     }
 
     public static Repartition repartition(List<Evaluation> evaluations) {
-        Repartition repartition = new Repartition();
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
-            repartition.increment(computeEvaluationOverallStep(e.getEvaluatedElements()));
+            List<EvaluatedElement> elements = e.getEvaluatedElements();
+            Step s = computeEvaluationOverallStep(elements);
+            Nurse n = NurseStore.MAP.get(e.getNurseId());
+            result.addElementToRepartition(s, n);
         }
-        return repartition;
+        return result;
     }
 
+
     public static Repartition repartitionByElementId(List<Evaluation> evaluations, Long elementId) {
-        Repartition repartition = new Repartition();
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
-            repartition.increment(computeEvaluationOverallStep(
-                    filterEvaluatedElementsByElementId(e.getEvaluatedElements(),
-                            Sets.newHashSet(elementId))));
+            List<EvaluatedElement> elements = e.getEvaluatedElements();
+            Step s = computeEvaluationOverallStep(filterEvaluatedElementsByElementId(elements, Sets.newHashSet(elementId)));
+            Nurse n = NurseStore.MAP.get(e.getNurseId());
+            result.addElementToRepartition(s, n);
         }
-        return repartition;
+        return result;
     }
 
     public static Repartition repartitionByCompetenceId(List<Evaluation> evaluations, Long competenceId) {
-        Repartition repartition = new Repartition();
-        Set<Long> filter = CompetencyStore.COMPETENCE_ID_TO_ELEMENT_ID_MAP.get(competenceId);
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
-            repartition.increment(computeEvaluationOverallStep(filterEvaluatedElementsByElementId(e.getEvaluatedElements(), filter)));
+            List<EvaluatedElement> elements = e.getEvaluatedElements();
+            Set<Long> filter = CompetencyStore.COMPETENCE_ID_TO_ELEMENT_ID_MAP.get(competenceId);
+            Step s = computeEvaluationOverallStep(filterEvaluatedElementsByElementId(elements, filter));
+            Nurse n = NurseStore.MAP.get(e.getNurseId());
+            result.addElementToRepartition(s, n);
         }
-        return repartition;
+        return result;
     }
 
     public static List<EvaluatedElement> filterEvaluatedElementsByElementId(List<EvaluatedElement> evaluatedElements,

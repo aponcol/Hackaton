@@ -19,7 +19,7 @@ public class EvaluatedElementsLoader {
         }
     };
 
-    public static List<EvaluatedElement> loadEvaluations() throws IOException {
+    public static List<EvaluatedElement> loadEvaluatedElements() throws IOException {
         return FileObjectLoader.loadFromFile("evaluation/evaluated_elements.txt", loader);
     }
 }
