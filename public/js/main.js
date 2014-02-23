@@ -147,7 +147,6 @@ $(function(){
 $(document).ready(function(){
     $(".open-box").click(function(){
         $('.strategies').show('fadeIn');
-        $('.strategies').show();
         return false;
     });
 });
