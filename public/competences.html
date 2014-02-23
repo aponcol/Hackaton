@@ -36,7 +36,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>RCI</b></a>
+            <a class="navbar-brand" href="#">
+                <b>RCI</b>
+            </a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -85,7 +87,15 @@
             </a>
         </li>
     </ul>
+    <div class="logo-wrapper">
+        <img src="img/CHU-Sainte-Justine.png" alt="CHU Sainte-Justine" />
+        <div class="melepi">
+            <img src="img/Logo mélépi.png?id=1" alt="Melepi" />
+        </div>
+    </div>
 </div>
+
+<div id="main-progress-bar" class='main-progress'></div>
 
 <!-- Carousel -->
 <div id="myCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
@@ -98,7 +108,9 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-1">
-    <button data-target="#myInnerCarousel" data-slide="prev">&lt;</button>
+    <a class="arrow" data-target="#myInnerCarousel" data-slide="prev">
+        <span class='arrow arrow-left'></span>
+    </a>
 </div>
 <div id="myInnerCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
 <div class="carousel-inner">
@@ -493,7 +505,9 @@
 </div>
 </div>
 <div class="col-md-1">
-    <button data-target="#myInnerCarousel" data-slide="next">&gt;</button>
+    <a class="arrow" style="margin-left: -50px;" data-target="#myInnerCarousel" data-slide="next">
+        <span class='arrow arrow-right'></span>
+    </a>
 </div>
 </div>
 </div>

@@ -97,6 +97,33 @@ h1, h2 {
     background: url(../img/boutons_check-25.png) no-repeat;
 }
 
+.competence-2 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #2E6BB5;
+    background: #A03071 50% 50% repeat;
+}
+
+.competence-2 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #EB8E22;
+    background: #E3DB6C 50% 50% repeat;
+    color: #A03071;
+}
+
+.has-js .competence-2 .label_radio {
+    background: url(../img/boutons_check-07.png) no-repeat;
+}
+
+.has-js .competence-2 .label_check {
+    background: url(../img/boutons_check-14.png) no-repeat;
+}
+
+.has-js .competence-2 label.c_on {
+    background: url(../img/boutons_check-21.png) no-repeat;
+}
+
+.has-js .competence-2 label.r_on {
+    background: url(../img/boutons_check-28.png) no-repeat;
+}
+
 .btn-progress {
     background: url(../img/Competence_cotes-01.png) no-repeat;
 }
@@ -168,4 +195,79 @@ h1, h2 {
 
 .evt-2 .btn-progress-wrapper .progress-bar {
     background-color: #A03071;
+}
+
+.logo-wrapper {
+/*    position: absolute;
+    bottom: -400px;
+    width: 250px;*/
+    margin-left: 15px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-wrapper img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.logo-wrapper .melepi {
+    width: 100%;
+}
+
+.melepi img {
+    margin-left: 20px;
+    width: 80%;
+}
+
+.arrow {
+    display: block;
+    width: 105px;
+    height: 105px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    background: url(../img/btn_greenPrevious.png);
+}
+
+.arrow-right {
+    background: url(../img/btn_greenNext.png);
+}
+
+.competence-1 .arrow-left {
+    background: url(../img/btn_lightBluePrevious.png);
+}
+
+.competence-1 .arrow-right {
+    background: url(../img/btn_lightBlueNext.png);
+}
+
+.competence-2 .arrow-left {
+    background: url(../img/btn_purplePrevious.png);
+}
+
+.competence-2 .arrow-right {
+    background: url(../img/btn_purpleNext.png);
+}
+
+.main-progress {
+    margin-top: 1px;
+    margin-right: 15px;
+}
+
+.main-progress .ui-widget-header {
+    /*background-color: #295394;*/
+    background-color: #686868;
+}
+
+.main-progress.ui-corner-all, .ui-corner-br {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.main-progress.ui-widget-content {
+    border: none;
 }

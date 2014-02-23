@@ -1,6 +1,7 @@
 .nav-sidebar {
     padding: 0px 0;
     border-right: 1px solid #ddd;
+    position: relative;
 }
 .nav-sidebar a {
     color: #333;

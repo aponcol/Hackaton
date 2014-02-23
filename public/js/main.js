@@ -25,16 +25,10 @@ $(function(){
     setupLabel();
     
     $(function() {
-//        $("#progressbar1").progressbar({
-//          value: 50
-//        });
-//        $("#progressbar2").progressbar({
-//          value: 60
-//        });
-//        $("#progressbar3").progressbar({
-//          value: 20
-//        });
-
+        $("#main-progress-bar").progressbar({
+          value: 50
+        });
+        
         $(".evt-0 .btn-progress-wrapper .progress-bar").progressbar({
             value: 50
         });
