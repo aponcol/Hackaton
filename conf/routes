@@ -13,6 +13,8 @@ GET     /repartition/competency/:id controllers.RepartitionController.getByCompe
 
 GET     /nurse                      controllers.NurseController.index()
 GET     /nurse/:id                  controllers.NurseController.get(id: Long)
+GET     /nurse/:id/evaluation       controllers.NurseController.getEvaluation(id: Long)
+GET     /nurse/:id/evaluation/:eId  controllers.NurseController.getEvaluationRepartition(id: Long, eId: Long)
 
 # UI Helpers
 

@@ -1,24 +1,21 @@
 package analysis;
 
-import models.evaluation.Evaluation;
 import models.evaluation.Step;
-import models.nurse.Nurse;
-import models.nurse.NurseStore;
 
-public class Repartition {
-    private StepRepartitionResult D;
-    private StepRepartitionResult A;
-    private StepRepartitionResult RC;
-    private StepRepartitionResult E;
+public class Repartition<T> {
+    private StepRepartitionResult<T> D;
+    private StepRepartitionResult<T> A;
+    private StepRepartitionResult<T> RC;
+    private StepRepartitionResult<T> E;
 
     public Repartition() {
-        this(new StepRepartitionResult(), new StepRepartitionResult(), new StepRepartitionResult(), new StepRepartitionResult());
+        this(new StepRepartitionResult<T>(), new StepRepartitionResult<T>(), new StepRepartitionResult<T>(), new StepRepartitionResult<T>());
     }
 
-    public Repartition(StepRepartitionResult D,
-                       StepRepartitionResult A,
-                       StepRepartitionResult RC,
-                       StepRepartitionResult E) {
+    public Repartition(StepRepartitionResult<T> D,
+                       StepRepartitionResult<T> A,
+                       StepRepartitionResult<T> RC,
+                       StepRepartitionResult<T> E) {
         this.D = D;
         this.A = A;
         this.RC = RC;
@@ -57,21 +54,21 @@ public class Repartition {
         E = e;
     }
 
-    public void addStepToRepartition(Step step,
-                                     Nurse nurse) {
+    public void addElementToRepartition(Step step,
+                                        T element) {
 
         switch (step) {
             case D:
-                this.D.addNurse(nurse);
+                this.D.addElement(element);
                 break;
             case A:
-                A.addNurse(nurse);
+                A.addElement(element);
                 break;
             case RC:
-                RC.addNurse(nurse);
+                RC.addElement(element);
                 break;
             case E:
-                E.addNurse(nurse);
+                E.addElement(element);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid step:" + step);

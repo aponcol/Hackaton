@@ -38,36 +38,36 @@ public class RepartitionAnalyser {
     }
 
     public static Repartition repartition(List<Evaluation> evaluations) {
-        Repartition result = new Repartition();
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
             Step s = computeEvaluationOverallStep(elements);
             Nurse n = NurseStore.MAP.get(e.getNurseId());
-            result.addStepToRepartition(s, n);
+            result.addElementToRepartition(s, n);
         }
         return result;
     }
 
 
     public static Repartition repartitionByElementId(List<Evaluation> evaluations, Long elementId) {
-        Repartition result = new Repartition();
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
             Step s = computeEvaluationOverallStep(filterEvaluatedElementsByElementId(elements, Sets.newHashSet(elementId)));
             Nurse n = NurseStore.MAP.get(e.getNurseId());
-            result.addStepToRepartition(s, n);
+            result.addElementToRepartition(s, n);
         }
         return result;
     }
 
     public static Repartition repartitionByCompetenceId(List<Evaluation> evaluations, Long competenceId) {
-        Repartition result = new Repartition();
+        Repartition<Nurse> result = new Repartition<>();
         for (Evaluation e : evaluations) {
             List<EvaluatedElement> elements = e.getEvaluatedElements();
             Set<Long> filter = CompetencyStore.COMPETENCE_ID_TO_ELEMENT_ID_MAP.get(competenceId);
             Step s = computeEvaluationOverallStep(filterEvaluatedElementsByElementId(elements, filter));
             Nurse n = NurseStore.MAP.get(e.getNurseId());
-            result.addStepToRepartition(s, n);
+            result.addElementToRepartition(s, n);
         }
         return result;
     }

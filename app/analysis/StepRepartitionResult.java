@@ -5,30 +5,30 @@ import models.nurse.Nurse;
 
 import java.util.List;
 
-public class StepRepartitionResult {
+public class StepRepartitionResult<T> {
 
     private int count;
-    private List<Nurse> nurses;
+    private List<T> details;
 
     public StepRepartitionResult() {
-        this(0, Lists.<Nurse>newArrayList());
+        this(0, Lists.<T>newArrayList());
     }
 
-    public StepRepartitionResult(int count, List<Nurse> nurses) {
+    public StepRepartitionResult(int count, List<T> details) {
         this.count = count;
-        this.nurses = nurses;
+        this.details = details;
     }
 
     public int getCount() {
         return count;
     }
 
-    public List<Nurse> getNurses() {
-        return nurses;
+    public List<T> getDetails() {
+        return details;
     }
 
-    public void addNurse(Nurse nurseSummary) {
+    public void addElement(T element) {
         count += 1;
-        nurses.add(nurseSummary);
+        details.add(element);
     }
 }
