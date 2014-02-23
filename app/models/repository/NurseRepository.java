@@ -3,6 +3,7 @@ package models.repository;
 import models.nurse.Nurse;
 import models.WorkShift;
 import models.WorkUnit;
+import org.hibernate.SessionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +17,15 @@ import java.util.List;
 public class NurseRepository {
 
     Connection mConnection;
+    SessionFactory mSessionFactory;
 
     public NurseRepository(Connection connection)
     {
         mConnection = connection;
+    }
+
+    public NurseRepository(SessionFactory sessionFactory) {
+        mSessionFactory = sessionFactory;
     }
 
     public List<Nurse> getNurses() {
@@ -48,5 +54,21 @@ public class NurseRepository {
         }
 
          return nurses;
+    }
+
+    public void add(Nurse nurse)
+    {
+        String cmd = String.format
+                ("INSERT INTO nurse (name, workunit_id, workshift_id) VALUES('%s',%d,%d)",
+                        nurse.getName(),
+                        nurse.getWorkUnit().ordinal(),
+                        nurse.getWorkShift().ordinal());
+        try
+        {
+            PreparedStatement statement = mConnection.prepareStatement(cmd);
+            int i = statement.executeUpdate();
+
+        }
+        catch ( Exception e) { e.printStackTrace();}
     }
 }
