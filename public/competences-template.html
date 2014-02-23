@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Darcy Web - Référentiel des Compétences Infirmière">
+    <meta name="author" content="Hacking Health Montreal 2014 - Group #6">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Darcy Web</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href='css/jquery-ui.css' rel='stylesheet'>
+    <link href='css/fonts.css' rel='stylesheet'>
+    <link href='css/carousel.css' rel='stylesheet'>
+    <link href='css/elements.css' rel='stylesheet'>
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/handlebars-v1.3.0.js"></script>
+    <script src="js/handlebars-math-helper.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/main.js"></script>
+
+    <script id="competences-template" type="text/x-handlebars-template">
+    <div class="container-fluid">
+    <div class="row">
+
+    <!-- Sidebar -->
+    <div class="nav-sidebar col-md-2">
+        <ul class="nav">
+            {{#each competences}}
+            <li class="evt-{{@index}}" data-target="#myCarousel" data-slide-to="{{@index}}">
+                <a href="javascript:;">
+                    <div class="btn-progress-wrapper">
+                        <div class="progress-bar"></div>
+                        <span class='btn-progress'></span>
+                    </div>
+                    {{shortDesc}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <!-- Carousel -->
+    <div id="myCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+    {{#each competences}}
+    <div class="item">
+    <h1>COMPETENCE{{math @index "+" 1}}:<br/>{{desc}}</h1>
+    <br/><br/>
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-1">
+        <button data-target="#myInnerCarousel" data-slide="prev">&lt;</button>
+    </div>
+    <div id="myInnerCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
+    <div class="carousel-inner">
+    {{#each elements}}
+    <div class="item">
+        <div class="container-fluid">
+            <div class="row">
+                <h2>{{desc}}</h2>
+                <div class="col-md-12 accordion-wrapper">
+                    <div class="element">
+                        <h3>Étape 1<br/>Infirmière Débutante</h3>
+                        <div>
+                            <ul>
+                                {{#each debutante}}
+                                <li>
+                                    <label class="label_check"><input type="checkbox" />
+                                        {{desc}}
+                                    </label>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <h3>Étape 2<br/>Infirmière Avertie</h3>
+                        <div>
+                            <ul>
+                                {{#each avertie}}
+                                <li>
+                                    <label class="label_check"><input type="checkbox" />
+                                        {{desc}}
+                                    </label>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <h3>Étape 3<br/>Infirmière Personne-Ressource</h3>
+                        <div>
+                            <ul>
+                                {{#each resource}}
+                                <li>
+                                    <label class="label_check"><input type="checkbox" />
+                                        {{desc}}
+                                    </label>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <h3>Étape 4<br/>Infirmière Experte Clinique</h3>
+                        <div>
+                            <ul>
+                                {{#each experte}}
+                                <li>
+                                    <label class="label_check"><input type="checkbox" />
+                                        {{desc}}
+                                    </label>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    </div>
+    </div>
+    <div class="col-md-1">
+        <button data-target="#myInnerCarousel" data-slide="next">&gt;</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    {{/each}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#navigation">
+
+<!-- Fixed navbar -->
+<div id="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><b>Darcy Web</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html" class="smothscroll">Accueil</a></li>
+                <li class="active"><a href="#" class="smothscroll">Compétences</a></li>
+                <li><a href="#showcase" class="smothScroll">Bilan</a></li>
+                <li><a href="#contact" class="smothScroll">Journal De Bord</a></li>
+                <li><a href="#contact" class="smothScroll">Informations</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<div id="competences-placeholder">
+
+</div>
+</body>
+</html>
