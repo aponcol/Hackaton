@@ -1,10 +1,15 @@
 package analysis;
 
+import models.evaluation.Step;
+
 public class Repartition {
-    private final int numD;
-    private final int numA;
-    private final int numRC;
-    private final int numE;
+    private int numD;
+    private int numA;
+    private int numRC;
+    private int numE;
+
+    public Repartition() {
+    }
 
     public Repartition(int numD, int numA, int numRC, int numE) {
         this.numD = numD;
@@ -27,5 +32,39 @@ public class Repartition {
 
     public int getNumE() {
         return numE;
+    }
+
+    public void setNumD(int numD) {
+        this.numD = numD;
+    }
+
+    public void setNumA(int numA) {
+        this.numA = numA;
+    }
+
+    public void setNumRC(int numRC) {
+        this.numRC = numRC;
+    }
+
+    public void setNumE(int numE) {
+        this.numE = numE;
+    }
+
+    public void increment(Step step) {
+        switch (step) {
+            case D:
+                numD += 1;
+                break;
+            case A:
+                numA += 1;
+                break;
+            case RC:
+                numRC += 1;
+                break;
+            case E:
+                numE += 1;
+                break;
+
+        }
     }
 }

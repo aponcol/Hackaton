@@ -1,9 +1,8 @@
 package models.repository;
 
-import models.nurse.Nurse;
 import models.WorkShift;
 import models.WorkUnit;
-import org.hibernate.SessionFactory;
+import models.nurse.Nurse;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,15 +16,10 @@ import java.util.List;
 public class NurseRepository {
 
     Connection mConnection;
-    SessionFactory mSessionFactory;
 
     public NurseRepository(Connection connection)
     {
         mConnection = connection;
-    }
-
-    public NurseRepository(SessionFactory sessionFactory) {
-        mSessionFactory = sessionFactory;
     }
 
     public List<Nurse> getNurses() {

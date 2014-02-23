@@ -6,8 +6,6 @@ import models.repository.Database;
 import models.repository.EvaluatedElementRepository;
 import models.repository.EvaluationRepository;
 import models.repository.NurseRepository;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import java.sql.Connection;
 import java.util.List;
