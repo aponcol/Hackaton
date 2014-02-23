@@ -82,13 +82,19 @@ $(function(){
 
             $('#myCarousel').on('slid.bs.carousel', function () {
                 $(".accordion-wrapper > div").accordion("refresh");
-                $("#myInnerCarousel .carousel-inner div").removeClass("active");
-                $("#myInnerCarousel .carousel-inner > :first-child").addClass("active");
+                $(".myInnerCarousel .carousel-inner div").removeClass("active");
+                $(".myInnerCarousel .carousel-inner > :first-child").addClass("active");
             });
 
-            $('#myInnerCarousel').carousel({
+            $('.myInnerCarousel').carousel({
                 interval: false,
                 pause: 'hover'
+            });
+            
+            $('.myInnerCarousel').on('slid.bs.carousel', function () {
+                setTimeout(function(){
+                    $(".accordion-wrapper > div").accordion("refresh");
+                },500);
             });
 
             $('.nav').on('click', 'li a', function() {
@@ -100,7 +106,7 @@ $(function(){
             });
 
             $("#myCarousel .carousel-inner :first-child").addClass("active");
-            $("#myInnerCarousel .carousel-inner :first-child").addClass("active");
+            $(".myInnerCarousel .carousel-inner :first-child").addClass("active");
             $(".nav-sidebar .nav > :first-child").addClass("active");
 
             $(".accordion-wrapper > div").accordion({ header: "h3", collapsible: true, active: false });

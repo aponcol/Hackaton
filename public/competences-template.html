@@ -40,12 +40,20 @@
                         <div class="progress-bar"></div>
                         <span class='btn-progress'></span>
                     </div>
-                    {{shortDesc}}
+                    <span class="competence-label">{{shortDesc}}</span>
                 </a>
             </li>
             {{/each}}
         </ul>
+        <div class="logo-wrapper">
+            <img src="img/CHU-Sainte-Justine.png" alt="CHU Sainte-Justine" />
+            <div class="melepi">
+                <img src="img/Logo mélépi.png?id=1" alt="Melepi" />
+            </div>
+        </div>
     </div>
+    
+    <div id="main-progress-bar" class='main-progress'></div>
 
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
@@ -54,20 +62,22 @@
     <div class="carousel-inner">
     {{#each competences}}
     <div class="item">
-    <h1>COMPETENCE{{math @index "+" 1}}:<br/>{{desc}}</h1>
+    <h1>COMPETENCE {{math @index "+" 1}}:<br/>{{desc}}</h1>
     <br/><br/>
     <div class="container-fluid">
     <div class="row">
     <div class="col-md-1">
-        <button data-target="#myInnerCarousel" data-slide="prev">&lt;</button>
+        <a class="arrow" data-target="#myInnerCarousel-{{math @index '+' 1}}" data-slide="prev">
+            <span class='arrow arrow-left'></span>
+        </a>
     </div>
-    <div id="myInnerCarousel" class="carousel slide col-md-10 competence-0" data-ride="carousel">
+    <div id="myInnerCarousel-{{math @index '+' 1}}" class="myInnerCarousel carousel slide col-md-10 competence-0" data-ride="carousel">
     <div class="carousel-inner">
     {{#each elements}}
     <div class="item">
         <div class="container-fluid">
             <div class="row">
-                <h2>{{desc}}</h2>
+                <h2 class="col-md-12">{{desc}}</h2>
                 <div class="col-md-12 accordion-wrapper">
                     <div class="element">
                         <h3>Étape 1<br/>Infirmière Débutante</h3>
@@ -133,7 +143,9 @@
     </div>
     </div>
     <div class="col-md-1">
-        <button data-target="#myInnerCarousel" data-slide="next">&gt;</button>
+        <a class="arrow" style="margin-left: -50px;" data-target="#myInnerCarousel-{{math @index '+' 1}}" data-slide="next">
+            <span class='arrow arrow-right'></span>
+        </a>
     </div>
     </div>
     </div>
