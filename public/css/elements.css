@@ -6,7 +6,7 @@ a:hover, a:active { outline: none; }
 /*#sizer      { width: 340px; margin: 0 auto; padding: 144px 200px 240px; }*/
 .wrapper        { width: 800px; padding: 18px 20px 0; margin: 40px; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; box-shadow: 0 5px 12px rgba(0,0,0,.4); -webkit-box-shadow: 0 5px 12px rgba(0,0,0,.4); -moz-box-shadow: 0 5px 12px rgba(0,0,0,.4); -khtml-box-shadow: 0 5px 12px rgba(0,0,0,.4); }
 .wrapper > div   { border: 0; padding-bottom: 9px; }
-label       { display: block; cursor: pointer; line-height: 20px; padding-bottom: 9px; text-shadow: 0 -1px 0 rgba(0,0,0,.2); }
+label       { display: block; cursor: pointer; line-height: 20px; padding-top: 9px; padding-bottom: 9px; text-shadow: 0 -1px 0 rgba(0,0,0,.2); }
 .radios     { padding-top: 18px; }
 .label_check input,
 .label_radio input  { margin-right: 5px; }
@@ -82,15 +82,15 @@ h1, h2 {
 }
 
 .has-js .competence-1 .label_radio {
-    background: url(../img/boutons_check-04.png) no-repeat;
+    background: url(../img/boutons_check-18.png) no-repeat;
 }
 
 .has-js .competence-1 .label_check {
-    background: url(../img/boutons_check-11.png) no-repeat;
+    background: url(../img/boutons_check-04.png) no-repeat;
 }
 
 .has-js .competence-1 label.c_on {
-    background: url(../img/boutons_check-18.png) no-repeat;
+    background: url(../img/boutons_check-11.png) no-repeat;
 }
 
 .has-js .competence-1 label.r_on {
@@ -109,15 +109,15 @@ h1, h2 {
 }
 
 .has-js .competence-2 .label_radio {
-    background: url(../img/boutons_check-07.png) no-repeat;
+    background: url(../img/boutons_check-21.png) no-repeat;
 }
 
 .has-js .competence-2 .label_check {
-    background: url(../img/boutons_check-14.png) no-repeat;
+    background: url(../img/boutons_check-07.png) no-repeat;
 }
 
 .has-js .competence-2 label.c_on {
-    background: url(../img/boutons_check-21.png) no-repeat;
+    background: url(../img/boutons_check-14.png) no-repeat;
 }
 
 .has-js .competence-2 label.r_on {

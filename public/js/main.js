@@ -1,3 +1,5 @@
+var checker = false;
+
 function setupLabel() {
     if ($('.label_check input').length) {
         $('.label_check').each(function(){ 
@@ -82,8 +84,20 @@ $(function(){
 
             $('#myCarousel').on('slid.bs.carousel', function () {
                 $(".accordion-wrapper > div").accordion("refresh");
-                $(".myInnerCarousel .carousel-inner div").removeClass("active");
-                $(".myInnerCarousel .carousel-inner > :first-child").addClass("active");
+                
+                if (checker) {
+                    checker = false;
+                    var classes = $(this).attr("class").split(/\s/);
+                    var newClassNumber = parseInt(classes[classes.length -1].replace("competence-","")) + 1;
+                    $('#myInnerCarousel-'+newClassNumber+' .carousel-inner > :first-child').addClass("active");
+                } else {
+//                    var classes = $(this).attr("class").split(/\s/);
+//                    var newClassNumber = classes[classes.length -1].replace("Microsoft","W3Schools");
+    //                $('#myInnerCarousel-'+newClassNumber+' .carousel-inner > :first-child').addClass("active");
+//                    console.log($('#myInnerCarousel-'+newClassNumber+' .carousel-inner > :first-child'));
+    //                $(".myInnerCarousel .carousel-inner div").removeClass("active");
+    //                $(".myInnerCarousel .carousel-inner > :first-child").addClass("active");
+                }
             });
 
             $('.myInnerCarousel').carousel({
@@ -98,6 +112,7 @@ $(function(){
             });
 
             $('.nav').on('click', 'li a', function() {
+                checker = true;
                 var previousTabClass = $('.row .nav li.active').attr('data-slide-to');
                 $('#myCarousel').removeClass('competence-'+previousTabClass);
                 $('#myCarousel').addClass('competence-'+$(this).parent().attr('data-slide-to'));
@@ -113,4 +128,8 @@ $(function(){
 
         });
     });
+});
+
+Handlebars.registerHelper('setIndex', function(value){
+    this.index = Number(value); //I needed human readable index, not zero based
 });

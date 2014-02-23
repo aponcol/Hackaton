@@ -71,10 +71,11 @@
             <span class='arrow arrow-left'></span>
         </a>
     </div>
-    <div id="myInnerCarousel-{{math @index '+' 1}}" class="myInnerCarousel carousel slide col-md-10 competence-0" data-ride="carousel">
+    <div id="myInnerCarousel-{{math @index '+' 1}}" class="myInnerCarousel carousel slide col-md-10" data-ride="carousel">
     <div class="carousel-inner">
     {{#each elements}}
-    <div class="item">
+    {{setIndex @index}}
+    <div class="item element-container-{{@index}}">
         <div class="container-fluid">
             <div class="row">
                 <h2 class="col-md-12">{{desc}}</h2>
@@ -85,7 +86,7 @@
                             <ul>
                                 {{#each debutante}}
                                 <li>
-                                    <label class="label_check"><input type="checkbox" />
+                                    <label class="label_check"><input type="checkbox" name="sample-checkbox-{{../index}}-1-{{@index}}" value="1" />
                                         {{desc}}
                                     </label>
                                 </li>
@@ -99,7 +100,7 @@
                             <ul>
                                 {{#each avertie}}
                                 <li>
-                                    <label class="label_check"><input type="checkbox" />
+                                    <label class="label_check"><input type="checkbox" name="sample-checkbox-{{../index}}-2-{{@index}}" value="1" />
                                         {{desc}}
                                     </label>
                                 </li>
@@ -113,7 +114,7 @@
                             <ul>
                                 {{#each resource}}
                                 <li>
-                                    <label class="label_check"><input type="checkbox" />
+                                    <label class="label_check"><input type="checkbox" name="sample-checkbox-{{../index}}-3-{{@index}}" value="1" />
                                         {{desc}}
                                     </label>
                                 </li>
@@ -127,12 +128,26 @@
                             <ul>
                                 {{#each experte}}
                                 <li>
-                                    <label class="label_check"><input type="checkbox" />
+                                    <label class="label_check"><input type="checkbox" name="sample-checkbox-{{../index}}-4-{{@index}}" value="1" />
                                         {{desc}}
                                     </label>
                                 </li>
                                 {{/each}}
                             </ul>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <h3>Autoévaluation / <br/>Commentaires / Exemples</h3>
+
+                        <div>
+                            <label class="label_radio"><input name="sample-radio-{{../index}}" value="1" type="radio"
+                                                                             checked/>Débutante 1</label>
+                            <label class="label_radio"><input name="sample-radio-{{../index}}" value="1" type="radio"/>Avertie
+                                2</label>
+                            <label class="label_radio"><input name="sample-radio-{{../index}}" value="1" type="radio"/>Personne-ressource
+                                3</label>
+                            <label class="label_radio"><input name="sample-radio-{{../index}}" value="1" type="radio"/>Experte
+                                clinique 4</label>
                         </div>
                     </div>
                 </div>
